@@ -1,4 +1,3 @@
-import chroma from 'chroma-js';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import { fontFamily, theme } from './theme';
