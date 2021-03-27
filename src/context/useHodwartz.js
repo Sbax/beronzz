@@ -3,7 +3,7 @@ import { actions } from './actions';
 import { checkSavedData, saveData } from './saveData';
 import Context from './store';
 
-const key = 'beronzz-hotwartz';
+const key = 'beronzz-hodwartz';
 const expirationKey = `${key}:expiration`;
 
 const chartKey = `${key}:chart`;
@@ -18,35 +18,33 @@ const fetchChart = async () => {
   return chart;
 };
 
-const useHotwartz = () => {
+const useHodwartz = () => {
   const { state, dispatch } = useContext(Context);
-  const { initializedHotwartz, loading } = state;
+  const { initializedHodwartz, loading } = state;
 
   useEffect(() => {
-    if (!initializedHotwartz && !loading) {
-      dispatch({ type: actions.initializeHotwartz });
+    if (!initializedHodwartz && !loading) {
+      dispatch({ type: actions.initializeHodwartz });
 
       const savedChart = checkSavedData(expirationKey, chartKey);
 
       if (savedChart) {
         return dispatch({
-          type: actions.gotHotwartz,
+          type: actions.gotHodwartz,
           payload: { chart: savedChart },
         });
       }
 
-      fetchChart().then(
-        (chart) => {
-          saveData(chart, chartKey, expirationKey);
+      fetchChart().then((chart) => {
+        saveData(chart, chartKey, expirationKey);
 
-          return dispatch({
-            type: actions.gotHotwartz,
-            payload: { chart },
-          });
-        }
-      );
+        return dispatch({
+          type: actions.gotHodwartz,
+          payload: { chart },
+        });
+      });
     }
-  }, [initializedHotwartz, loading, dispatch]);
+  }, [initializedHodwartz, loading, dispatch]);
 };
 
-export default useHotwartz;
+export default useHodwartz;

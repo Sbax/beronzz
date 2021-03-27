@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Context from '../context/store';
-import useHotwartz from '../context/useHotwartz';
+import useHodwartz from '../context/useHodwartz';
 import { theme } from '../styles/theme';
 
 const List = styled.ul`
@@ -28,12 +28,12 @@ const House = styled.span`
 `;
 
 function Chart() {
-  useHotwartz();
+  useHodwartz();
 
   const { state } = useContext(Context);
-  const { initializedHotwartz, loading } = state;
+  const { initializedHodwartz, loading } = state;
   const { chart } = state;
-  if (!initializedHotwartz || loading) return '';
+  if (!initializedHodwartz || loading) return '';
 
   return (
     <List>

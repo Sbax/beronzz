@@ -18,21 +18,21 @@ const useReducer = (state, { type, payload }) => {
         loading: false,
         initializedEnnara: true,
       };
-    
-    case actions.initializeHotwartz:
+
+    case actions.initializeHodwartz:
       return {
         ...state,
         loading: true,
       };
 
-    case actions.gotHotwartz:
+    case actions.gotHodwartz:
       const { chart } = payload;
 
       return {
         ...state,
         chart,
         loading: false,
-        initializedHotwartz: true,
+        initializedHodwartz: true,
       };
 
     default:

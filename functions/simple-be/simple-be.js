@@ -14,8 +14,8 @@ const { getPlayers, getRewards } = ennara;
 addRoute(router, '/players', getPlayers);
 addRoute(router, '/rewards', getRewards);
 
-const hotwartz = require('./hotwartz');
-const { getChart } = hotwartz;
+const hodwartz = require('./hodwartz');
+const { getChart } = hodwartz;
 
 addRoute(router, '/chart', getChart);
 

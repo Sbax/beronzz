@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 const Context = createContext({
   initializedEnnara: false,
-  initializedHotwartz: false,
+  initializedHodwartz: false,
   loading: false,
 });
 
