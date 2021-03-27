@@ -14,6 +14,11 @@ const { getPlayers, getRewards } = ennara;
 addRoute(router, '/players', getPlayers);
 addRoute(router, '/rewards', getRewards);
 
+const hotwartz = require('./hotwartz');
+const { getChart } = hotwartz;
+
+addRoute(router, '/chart', getChart);
+
 app.use(bodyParser.json());
 app.use('/.netlify/functions/simple-be', router);
 app.use('/', (_, res) => res.sendFile(path.join(__dirname, '../index.html')));

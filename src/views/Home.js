@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import logo from '../assets/svg/logo.svg';
+import Chart from '../components/Chart';
 import DefaultContainer from '../components/Container';
 import Flying from '../components/Flying';
 import Illustration from '../components/Illustration';
+import { breakpoints } from '../styles/theme';
 
 const Container = styled(DefaultContainer)`
   display: flex;
@@ -13,6 +15,10 @@ const Container = styled(DefaultContainer)`
 
   > *:first-child {
     margin-top: 10rem;
+
+    @media only screen and (max-width: ${breakpoints.tablet}) {
+      margin-top: 1rem;
+    }
   }
 
   img {
@@ -59,9 +65,10 @@ const Home = () => {
         19 + sorprese <i>quasi</i> sempre preannunciate
       </Subtitle>
 
-      <Subtitle>Benvenuti ad Ennara!</Subtitle>
-      <Flying>{words[word]}</Flying>
+      <Subtitle>Benvenuti ad Hotwartz!</Subtitle>
+      <Chart />
 
+      <Flying>{words[word]}</Flying>
       <Illustration />
     </Container>
   );
