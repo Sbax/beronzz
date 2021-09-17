@@ -41,7 +41,7 @@ const matchMon = (name, mons) => {
   };
 };
 
-export default () => {
+const useMons = () => {
   const { state, dispatch } = useContext(Context);
   const { initializedMons, loading } = state;
 
@@ -78,3 +78,5 @@ export default () => {
     }
   }, [initializedMons, loading, dispatch]);
 };
+
+export default useMons;

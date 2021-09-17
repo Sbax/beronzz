@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
 import great from '../../sprites/great.png';
 import master from '../../sprites/master.png';
@@ -34,7 +34,7 @@ const Loader = () => {
   const items = [poke, great, ultra, master];
   const [visible, setVisible] = useState(0);
 
-  useEffect(() => {
+  useCallback(() => {
     const timer = setTimeout(
       () => setVisible((visible + 1) % items.length),
       800
@@ -43,7 +43,7 @@ const Loader = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [visible, setVisible, items]);
+  }, [visible, setVisible, items.length]);
 
   return (
     <Container>
