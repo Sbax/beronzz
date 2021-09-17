@@ -19,6 +19,12 @@ const { getChart } = hodwartz;
 
 addRoute(router, '/chart', getChart);
 
+const mon = require('./mon');
+const { getMons, getTrainers } = mon;
+
+addRoute(router, '/mons', getMons);
+addRoute(router, '/trainers', getTrainers);
+
 app.use(bodyParser.json());
 app.use('/.netlify/functions/simple-be', router);
 app.use('/', (_, res) => res.sendFile(path.join(__dirname, '../index.html')));

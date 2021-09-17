@@ -44,10 +44,12 @@ const Navbar = () => {
       <Links>
         <Link href="/">Home</Link>
         <Link href="/rewards">Tesori</Link>
+        <Link href="/catch">Catch!</Link>
       </Links>
 
       <RightLinks>
         <Link href="/world">Ennara</Link>
+        <Link href="/trainers">Trainers</Link>
       </RightLinks>
     </Nav>
   );

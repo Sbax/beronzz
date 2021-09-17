@@ -65,7 +65,7 @@ const Home = () => {
         19 + sorprese <i>quasi</i> sempre preannunciate
       </Subtitle>
 
-      <Subtitle>Benvenuti ad Hodwartz!</Subtitle>
+      <Subtitle>Benvenuti ad Ennara!</Subtitle>
       <Chart />
 
       <Flying>{words[word]}</Flying>

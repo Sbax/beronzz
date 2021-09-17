@@ -1,10 +1,15 @@
 import React, { useContext, useReducer } from 'react';
 import styled from 'styled-components';
 import { Route, Switch } from 'wouter';
+import Navbar from './components/Navbar';
 import reducer from './context/reducer';
 import Context from './context/store';
 import GlobalStyle from './styles/GlobalStyle';
+import Catch from './views/Catch';
 import Home from './views/Home';
+import Reward from './views/Reward';
+import Trainers from './views/Trainers';
+import World from './views/World';
 
 const Main = styled.main`
   height: 100%;
@@ -21,9 +26,14 @@ function App() {
     <Context.Provider value={{ state, dispatch }}>
       <GlobalStyle />
       <Main>
+        <Navbar />
         <section>
           <Switch>
             <Route path="/" component={Home} />
+            <Route path="/world" component={World} />
+            <Route path="/rewards" component={Reward} />
+            <Route path="/catch/:slug?" component={Catch} />
+            <Route path="/trainers" component={Trainers} />
           </Switch>
         </section>
       </Main>

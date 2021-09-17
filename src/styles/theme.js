@@ -1,6 +1,7 @@
 export const theme = {
   offBlack: '#18181B',
   offWhite: '#EDEDED',
+  grey: '#adadad',
 
   mainBg: '#fdf7f4',
   text: '#010101',

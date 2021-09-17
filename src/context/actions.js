@@ -4,4 +4,7 @@ export const actions = {
 
   initializeHodwartz: 'INIT_HODWARTZ',
   gotHodwartz: 'GOT_HODWARTZ',
+
+  initializeMons: 'INIT_MONS',
+  gotMons: 'GOT_MONS',
 };
