@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'wouter';
+import { breakpoints } from '../styles/theme';
 
 const Container = styled.div`
   overflow: auto;
@@ -25,7 +26,9 @@ const Links = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    margin: auto;
+  }
 `;
 
 const Mon = styled(Link)`
@@ -62,7 +65,9 @@ const Shadow = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    margin: auto;
+  }
 
   > img {
     display: block;
