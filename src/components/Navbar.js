@@ -16,6 +16,7 @@ const Nav = styled.nav`
   max-width: ${breakpoints.desktop};
   width: 100%;
   margin: auto;
+  z-index: 1;
 `;
 
 const Links = styled.section`
