@@ -11,7 +11,7 @@ const Nav = styled.nav`
   grid-template-rows: auto;
 
   padding: 2rem 1rem;
-  font-size: 1.25rem;
+  font-size: 2em;
 
   max-width: ${breakpoints.desktop};
   width: 100%;
