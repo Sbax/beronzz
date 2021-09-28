@@ -1,19 +1,12 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'wouter';
-import { breakpoints } from '../styles/theme';
+import { breakpoints, theme } from '../styles/theme';
 
 const Container = styled.div`
   overflow: auto;
-  overflow-y: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 0;
 
-  background: #cabbaa;
+  background: ${theme.mainBg};
 
   display: flex;
   align-items: center;
@@ -80,9 +73,8 @@ const Shadow = styled.div`
     content: '';
     position: absolute;
 
-    @media only screen and (min-width: ${breakpoints.tablet}) {
-      box-shadow: inset 0px 0px 1.5em 1.5em #cabbaa;
-    }
+    box-shadow: inset 0px 0px 1.5em 1.5em ${theme.mainBg};
+
     top: 0;
     left: 0;
     bottom: 0;

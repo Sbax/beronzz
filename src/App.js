@@ -16,6 +16,10 @@ const Main = styled.main`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
+
+  > section {
+    max-width: 100vw;
+  }
 `;
 
 function App() {

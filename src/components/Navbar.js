@@ -11,7 +11,10 @@ const Nav = styled.nav`
   grid-template-rows: auto;
 
   padding: 2rem 1rem;
-  font-size: 2em;
+  font-size: 1.25rem;
+  @media only screen and (min-width: ${breakpoints.tablet}) {
+    font-size: 2rem;
+  }
 
   max-width: ${breakpoints.desktop};
   width: 100%;
@@ -31,7 +34,11 @@ const Links = styled.section`
   }
 
   a {
-    color: ${theme.secondary};
+    color: ${theme.mainBg};
+    text-decoration: none;
+    background: ${theme.accent};
+    padding: 0.15em 0.25em;
+    border-radius: 0.5em;
   }
 `;
 
