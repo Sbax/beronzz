@@ -11,3 +11,5 @@ fields:
     schema:
       format: markdown
   label: Storia
+pages:
+- src/forestry/story.json
