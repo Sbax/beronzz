@@ -1,8 +1,9 @@
 export const theme = {
   offBlack: '#18181B',
   offWhite: '#EDEDED',
+  grey: '#adadad',
 
-  mainBg: '#fdf7f4',
+  mainBg: '#EEEBD3',
   text: '#010101',
   accent: '#D63831',
   secondary: '#8752F6',
@@ -21,6 +22,7 @@ export const fontFamily = {
 };
 
 export const breakpoints = {
+  mobile: `${768}px`,
   tablet: `${992}px`,
   desktop: `${1024}px`,
 };

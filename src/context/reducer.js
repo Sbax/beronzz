@@ -35,6 +35,23 @@ const useReducer = (state, { type, payload }) => {
         initializedHodwartz: true,
       };
 
+    case actions.initializeMons:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case actions.gotMons:
+      const { mons, trainers } = payload;
+
+      return {
+        ...state,
+        mons,
+        trainers,
+        loading: false,
+        initializedMons: true,
+      };
+
     default:
       return state;
   }

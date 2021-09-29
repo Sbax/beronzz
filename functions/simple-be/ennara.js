@@ -8,31 +8,25 @@ const ennaraSpreadsheet = process.env.ENNARA_SHEET;
 
 const getPlayers = () =>
   getSheet(ennaraSpreadsheet, 'Players!A2:IX')
-    .then(
-      (response) =>
-        (response || []).reduce(
-          (
-            { players },
-            [number, name, housing, items, creatures, gold, amumu]
-          ) => ({
-            players: [
-              ...players,
-              {
-                number: parseInt(number),
-                name,
-                slug: toKebabCase(name),
-                housing: parseInt(housing),
-                items: parseInt(items),
-                creatures: parseInt(creatures),
-                gold: parseInt(gold),
-                amumu: parseInt(amumu),
-              },
-            ],
-          }),
-          {
-            players: [],
-          }
-        ).players
+    .then((response) =>
+      (response || [])
+        .filter(([number, name]) => !!name)
+        .reduce(
+          (players, [number, name, housing, items, creatures, gold, amumu]) => [
+            ...players,
+            {
+              number: parseInt(number),
+              name,
+              slug: toKebabCase(name),
+              housing: parseInt(housing),
+              items: parseInt(items),
+              creatures: parseInt(creatures),
+              gold: parseInt(gold),
+              amumu: parseInt(amumu),
+            },
+          ],
+          []
+        )
     )
     .catch((error) => error);
 

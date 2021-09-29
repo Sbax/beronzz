@@ -33,27 +33,31 @@ const World = () => {
   const [search, setSearch] = useState('');
   const triggerSearch = ({ value }) => setSearch(value);
 
-  if (!initializedEnnara || loading) return 'Loading...';
-
   return (
     <Container>
-      <Input
-        onInput={(event) => {
-          triggerSearch(event.target);
-        }}
-        type="text"
-        placeholder="Ricerca..."
-      />
+      {!initializedEnnara || loading ? (
+        'Loading...'
+      ) : (
+        <>
+          <Input
+            onInput={(event) => {
+              triggerSearch(event.target);
+            }}
+            type="text"
+            placeholder="Ricerca..."
+          />
 
-      <Players>
-        {players
-          .filter(({ name }) =>
-            name.toLowerCase().includes(search.toLowerCase())
-          )
-          .map(({ slug, ...player }) => (
-            <Player {...player} key={slug} />
-          ))}
-      </Players>
+          <Players>
+            {players
+              .filter(({ name }) =>
+                name.toLowerCase().includes(search.toLowerCase())
+              )
+              .map(({ slug, ...player }) => (
+                <Player {...player} key={slug} />
+              ))}
+          </Players>
+        </>
+      )}
     </Container>
   );
 };
