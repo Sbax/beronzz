@@ -9,7 +9,7 @@ fields:
     required: false
     wysiwyg: true
     schema:
-      format: html
+      format: html-blocks
   label: Storia
 pages:
 - src/forestry/story.json
