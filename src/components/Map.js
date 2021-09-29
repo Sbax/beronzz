@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const Links = styled.div`
-  z-index: 1;
+  z-index: 2;
   height: 100%;
 
   position: absolute;
@@ -44,7 +44,7 @@ const Village = styled(Link)`
   bottom: 0;
   left: 0;
   width: 34%;
-  height: 51%;
+  height: 53%;
 
   cursor: pointer;
 
@@ -53,11 +53,27 @@ const Village = styled(Link)`
 
 const ImageContainer = styled.div`
   position: relative;
+  z-index: 1;
 
   img {
+    grid-area: stacked;
     display: block;
     height: 100vh;
     width: auto;
+
+    transition: opacity 200ms ease-in-out;
+
+    &.hovered-main {
+      opacity: 0.75;
+    }
+
+    &.hovered {
+      opacity: 1;
+    }
+
+    &.hidden {
+      opacity: 0;
+    }
 
     @media only screen and (min-width: ${breakpoints.tablet}) {
       min-height: 0;
@@ -68,6 +84,10 @@ const ImageContainer = styled.div`
 `;
 
 const Shadow = styled.div`
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-areas: 'stacked';
   &:before {
     display: block;
     content: '';
@@ -79,6 +99,7 @@ const Shadow = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
+    z-index: 2;
   }
 `;
 
@@ -93,6 +114,8 @@ function Map() {
     container.current.scrollTo((imageWidth - containerWidth) / 2, 0);
   }, [loaded]);
 
+  const [hovered, setHovered] = useState(false);
+
   return (
     <Container ref={container}>
       <ImageContainer>
@@ -102,12 +125,36 @@ function Map() {
             src="/images/map.jpg"
             alt="Mappa"
             onLoad={() => setLoaded(true)}
+            className={hovered ? 'hovered-main' : ''}
+          />
+
+          <img
+            src="/images/ennara-only.png"
+            alt="ennara"
+            className={hovered === 'ennara' ? 'hovered' : 'hidden'}
+          />
+          <img
+            src="/images/mons-only.png"
+            alt="mons"
+            className={hovered === 'mons' ? 'hovered' : 'hidden'}
           />
         </Shadow>
 
         <Links>
-          <Mon href="/trainers">Trainers</Mon>
-          <Village href="/world">Ennara</Village>
+          <Mon
+            href="/trainers"
+            onMouseEnter={() => setHovered('mons')}
+            onMouseLeave={() => setHovered(false)}
+          >
+            Trainers
+          </Mon>
+          <Village
+            href="/world"
+            onMouseEnter={() => setHovered('ennara')}
+            onMouseLeave={() => setHovered(false)}
+          >
+            Ennara
+          </Village>
         </Links>
       </ImageContainer>
     </Container>

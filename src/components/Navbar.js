@@ -7,13 +7,16 @@ import { breakpoints, theme } from '../styles/theme';
 
 const Nav = styled.nav`
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
 
   padding: 2rem 1rem;
   font-size: 1.25rem;
   @media only screen and (min-width: ${breakpoints.tablet}) {
     font-size: 2rem;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
   }
 
   max-width: ${breakpoints.desktop};
@@ -57,7 +60,9 @@ const Navbar = () => {
 
       <RightLinks>
         <Link href="/world">Ennara</Link>
-        <Link href="/trainers">Trainers</Link>
+        <Link href="/trainers">Allenatori</Link>
+        <Link href="/story">Storia</Link>
+        <Link href="/social">Social</Link>
       </RightLinks>
     </Nav>
   );

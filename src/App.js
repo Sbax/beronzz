@@ -8,6 +8,8 @@ import GlobalStyle from './styles/GlobalStyle';
 import Catch from './views/Catch';
 import Home from './views/Home';
 import Reward from './views/Reward';
+import Social from './views/Social';
+import Story from './views/Story';
 import Trainers from './views/Trainers';
 import World from './views/World';
 
@@ -38,6 +40,8 @@ function App() {
             <Route path="/rewards" component={Reward} />
             <Route path="/catch/:slug?" component={Catch} />
             <Route path="/trainers" component={Trainers} />
+            <Route path="/story" component={Story} />
+            <Route path="/social" component={Social} />
           </Switch>
         </section>
       </Main>
