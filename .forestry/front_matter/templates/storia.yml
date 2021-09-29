@@ -1,4 +1,13 @@
 ---
 label: Storia
 hide_body: true
-fields: []
+fields:
+- name: story
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Storia
