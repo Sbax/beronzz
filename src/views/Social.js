@@ -81,13 +81,13 @@ const Social = () => {
 
       <Section>
         <a href="https://www.twitch.tv/annapizziconi">
-          <FontAwesomeIcon icon={['fab', 'twitch']} />
+          <FontAwesomeIcon size="3x" icon={['fab', 'twitch']} />
         </a>
         <a href="https://www.youtube.com/channel/UCGdtDT22RwfTUGmcF9SgA-w">
-          <FontAwesomeIcon icon={['fab', 'youtube']} />
+          <FontAwesomeIcon size="3x" icon={['fab', 'youtube']} />
         </a>
         <a href="https://www.instagram.com/beronzz/">
-          <FontAwesomeIcon icon={['fab', 'instagram']} />
+          <FontAwesomeIcon size="3x" icon={['fab', 'instagram']} />
         </a>
       </Section>
 
