@@ -62,6 +62,7 @@ const Navbar = () => {
         <Link href="/world">Ennara</Link>
         <Link href="/trainers">Allenatori</Link>
         <Link href="/story">Storia</Link>
+        <Link href="/rules">Spiegazione Sito</Link>
         <Link href="/social">Social</Link>
       </RightLinks>
     </Nav>

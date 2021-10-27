@@ -8,6 +8,7 @@ import GlobalStyle from './styles/GlobalStyle';
 import Catch from './views/Catch';
 import Home from './views/Home';
 import Reward from './views/Reward';
+import Rules from './views/Rules';
 import Social from './views/Social';
 import Story from './views/Story';
 import Trainers from './views/Trainers';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/trainers" component={Trainers} />
             <Route path="/story" component={Story} />
             <Route path="/social" component={Social} />
+            <Route path="/rules" component={Rules} />
           </Switch>
         </section>
       </Main>
