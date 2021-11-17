@@ -5,6 +5,10 @@ admin_path:
 webhook_url: 
 sections:
 - type: document
+  path: src/forestry/social.json
+  label: Social e Orari
+  match: "**/*"
+- type: document
   path: src/forestry/story.json
   label: Storia
 upload_dir: uploads
