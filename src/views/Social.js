@@ -13,6 +13,8 @@ import Flying from '../components/Flying';
 import Illustration from '../components/Illustration';
 import { breakpoints } from '../styles/theme';
 
+import { instagram, twitch, youtube, orari } from '../forestry/social.json';
+
 library.add([faInstagram, faYoutube, faTwitch]);
 
 const Container = styled(DefaultContainer)`
@@ -75,18 +77,18 @@ const Social = () => {
       <img src={logo} alt="Beronz" />
 
       <Subtitle>
-        Live su <a href="https://www.twitch.tv/annapizziconi">Twitch</a> dalle
-        11 alle 19 + sorprese <i>quasi</i> sempre preannunciate
+        Live su <a href={twitch}>Twitch</a> {orari} + sorprese <i>quasi</i>{' '}
+        sempre preannunciate
       </Subtitle>
 
       <Section>
-        <a href="https://www.twitch.tv/annapizziconi">
+        <a href={twitch}>
           <FontAwesomeIcon size="3x" icon={['fab', 'twitch']} />
         </a>
-        <a href="https://www.youtube.com/channel/UCGdtDT22RwfTUGmcF9SgA-w">
+        <a href={youtube}>
           <FontAwesomeIcon size="3x" icon={['fab', 'youtube']} />
         </a>
-        <a href="https://www.instagram.com/beronzz/">
+        <a href={instagram}>
           <FontAwesomeIcon size="3x" icon={['fab', 'instagram']} />
         </a>
       </Section>
